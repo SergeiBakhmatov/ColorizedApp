@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 final class SettingsViewController: UIViewController {
     
     @IBOutlet var colorView: UIView!
@@ -21,11 +22,11 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var blueSlider: UISlider!
     
     var backgraundColor: UIColor!
+    unowned var delegate: SettingsViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 15
-       // setColor()
         colorView.backgroundColor = backgraundColor
         
         redLabel.text = stringFrom(color: backgraundColor.rgba.red)
@@ -51,6 +52,8 @@ final class SettingsViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped() {
+        backgraundColor = colorView.backgroundColor
+        delegate.setBackgraundColor(for: backgraundColor)
         dismiss(animated: true)
     }
     
@@ -75,12 +78,14 @@ final class SettingsViewController: UIViewController {
 // MARK: - UIColor
 extension UIColor {
     var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
-            var red: CGFloat = 0
-            var green: CGFloat = 0
-            var blue: CGFloat = 0
-            var alpha: CGFloat = 0
-            getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-
-            return (red: red, green: green, blue: blue, alpha: alpha)
-        }
+        
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        
+        return (red: red, green: green, blue: blue, alpha: alpha)
+    }
 }
