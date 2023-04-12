@@ -28,9 +28,13 @@ final class SettingsViewController: UIViewController {
        // setColor()
         colorView.backgroundColor = backgraundColor
         
-        redLabel.text = string(from: redSlider)
-        greenLabel.text = string(from: greenSlider)
-        blueLabel.text = string(from: blueSlider)
+        redLabel.text = stringFrom(color: backgraundColor.rgba.red)
+        greenLabel.text = stringFrom(color: backgraundColor.rgba.green)
+        blueLabel.text = stringFrom(color: backgraundColor.rgba.blue)
+        
+        redSlider.value = Float(backgraundColor.rgba.red)
+        greenSlider.value = Float(backgraundColor.rgba.green)
+        blueSlider.value = Float(backgraundColor.rgba.blue)
     }
     
     @IBAction func sliderAction(_ sender: UISlider) {
@@ -63,4 +67,20 @@ final class SettingsViewController: UIViewController {
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
+    private func stringFrom(color: CGFloat) -> String {
+        String(format: "%.2f", color)
+    }
+}
+
+// MARK: - UIColor
+extension UIColor {
+    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+            var red: CGFloat = 0
+            var green: CGFloat = 0
+            var blue: CGFloat = 0
+            var alpha: CGFloat = 0
+            getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+
+            return (red: red, green: green, blue: blue, alpha: alpha)
+        }
 }
