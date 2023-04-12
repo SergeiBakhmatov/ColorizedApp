@@ -20,10 +20,13 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    var backgraundColor: UIColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 15
-        setColor()
+       // setColor()
+        colorView.backgroundColor = backgraundColor
         
         redLabel.text = string(from: redSlider)
         greenLabel.text = string(from: greenSlider)
