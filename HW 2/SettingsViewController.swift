@@ -43,6 +43,11 @@ final class SettingsViewController: UIViewController {
         
     }
     
+    @IBAction func doneButtonTapped() {
+        dismiss(animated: true)
+    }
+    
+    
     private func setColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),

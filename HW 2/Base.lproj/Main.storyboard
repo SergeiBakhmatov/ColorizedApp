@@ -127,12 +127,23 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II5-Rk-0Xj">
+                                <rect key="frame" x="159.5" y="506" width="56" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="M9f-yJ-518"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.14211790186667489" green="0.29647090467996817" blue="0.5760962034239987" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="IbL-qV-7Kr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3Sl-ax-kew"/>
+                            <constraint firstItem="II5-Rk-0Xj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K0J-SE-aZI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IbL-qV-7Kr" secondAttribute="trailing" constant="16" id="MP6-Ew-gbh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="II5-Rk-0Xj" secondAttribute="bottom" constant="120" id="eIv-Bk-HBu"/>
                             <constraint firstItem="LAC-qd-7r8" firstAttribute="top" secondItem="IbL-qV-7Kr" secondAttribute="bottom" constant="53" id="f7g-rF-YuP"/>
                             <constraint firstItem="LAC-qd-7r8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kRe-t4-j9O"/>
                             <constraint firstAttribute="trailing" secondItem="LAC-qd-7r8" secondAttribute="trailing" constant="16" id="kq6-Ie-FAn"/>
